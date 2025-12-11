@@ -25,6 +25,10 @@ namespace Dot_Net_Ecom.Controllers
         [HttpPost]
         public IActionResult Create(Category obj)
         {
+            if(obj.Name==obj.DisplayOrder.ToString())
+            {
+                ModelState.AddModelError("displayOrder", "Display Order cannot be same as Category name.");
+            }
             if (ModelState.IsValid)
             {
                 _db.Categories.Add(obj);
