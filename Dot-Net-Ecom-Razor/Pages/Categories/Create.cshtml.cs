@@ -24,6 +24,7 @@ namespace Dot_Net_Ecom_Razor.Pages.Categories
         {
             _db.Categories.Add(Category);
             _db.SaveChanges();
+            TempData["Success"] = "Category created successfully";
             return RedirectToPage("Index");
         }
     }

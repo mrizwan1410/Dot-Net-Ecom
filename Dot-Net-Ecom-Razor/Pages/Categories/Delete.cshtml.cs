@@ -32,6 +32,7 @@ namespace Dot_Net_Ecom_Razor.Pages.Categories
             }
             _db.Categories.Remove(obj);
             _db.SaveChanges();
+            TempData["Success"] = "Category deleted successfully";
             return RedirectToPage("Index");
         }
     }

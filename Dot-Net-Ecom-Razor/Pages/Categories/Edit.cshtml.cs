@@ -29,7 +29,7 @@ namespace Dot_Net_Ecom_Razor.Pages.Categories
             {
                 _db.Categories.Update(Category);
                 _db.SaveChanges();
-                //TempData["Success"] = "Category updated successfully";
+                TempData["Success"] = "Category updated successfully";
                 return RedirectToPage("Index");
             }
             return Page();
