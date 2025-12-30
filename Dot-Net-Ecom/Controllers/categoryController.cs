@@ -1,5 +1,5 @@
-﻿using Dot_Net_Ecom.Data;
-using Dot_Net_Ecom.Models;
+﻿using Dot_Net.DataAccess.Data;
+using Dot_Net.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Dot_Net_Ecom.Controllers
