@@ -2,8 +2,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Dot_Net.DataAccess.Repository.IRepository;
 
-namespace Dot_Net_Ecom.Controllers
+namespace Dot_Net_Ecom.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class CategoryController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
