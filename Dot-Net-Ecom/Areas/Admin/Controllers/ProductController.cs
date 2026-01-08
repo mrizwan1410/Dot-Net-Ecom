@@ -1,6 +1,7 @@
 ﻿using Dot_Net.Models;
 using Microsoft.AspNetCore.Mvc;
 using Dot_Net.DataAccess.Repository.IRepository;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Dot_Net_Ecom.Areas.Admin.Controllers
 {
@@ -15,6 +16,12 @@ namespace Dot_Net_Ecom.Areas.Admin.Controllers
         public IActionResult Index()
         {
             List<Product> objProductList = _unitOfWork.Product.GetAll().ToList();
+            IEnumerable<SelectListItem> CategoryList = _unitOfWork.Category.GetAll()
+                .Select(u => new SelectListItem
+                {
+                    Text = u.Name,
+                    Value = u.Id.ToString()
+                });
             return View(objProductList);
         }
 
